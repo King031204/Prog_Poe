@@ -25,4 +25,4 @@ Resetting recipe Quantities will return any adjusted amounts back to their origi
 
 Removing all saved recipes will remove all previously saved recipe data from the database.
 
-The main menu will then re-display for the user to select another option or quit the application. The text structure and workflow remains unchanged while rephrasing for clarity and professional tone.﻿
+The main menu will then re-display for the user to select another option or quit the application. 
