@@ -1,10 +1,11 @@
-﻿namespace Prog_Poe
+﻿using System;
+
+namespace Prog_Poe
 {
-    internal class Program
+    class Poe
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+
     }
 }
+        
+ 
