@@ -4,48 +4,51 @@ namespace Prog_Poe
 {
     class Recipe
     {
-        public Ingredients[] IngredientList { get; set; }
-        public int NumberOfSteps { get; set; }
-        public string[] Steps { get; set; }
+        public string name;
+        public List<Ingredients> ingredients;
+        public List<string> steps;
 
-        public Recipe(Ingredients[] ingredients, int numberOfSteps, string[] steps)
+        public Recipe(string name, List<Ingredients> ingredients, List<string> steps)
         {
-            IngredientList = ingredients;
-            NumberOfSteps = numberOfSteps;
-            Steps = steps;
+            this.name = name;
+            this.ingredients = ingredients;
+            this.steps = steps;
+
         }
 
-        public void Display()
+        public void ScaleQuantities(double scaleFactor)
         {
-           
-
-            Console.WriteLine("Ingredients:");
-            foreach (Ingredients ingredient in IngredientList)
+            foreach (Ingredients ingredient in ingredients)
             {
-                ingredient.Display();
-            }
-
-            Console.WriteLine("\nSteps:");
-            for (int i = 0; i < NumberOfSteps; i++)
-            {
-                Console.WriteLine($"{i + 1}. {Steps[i]}");
+                ingredient.ScaleQuantity(scaleFactor);
             }
         }
 
-        public void Scale(double scalingFactor)
+        public void ResetQuantities()
         {
-            foreach (Ingredients ingredient in IngredientList)
+            foreach (Ingredients ingredient in ingredients)
             {
-                ingredient.Quantity *= scalingFactor;
+                ingredient.ResetQuantity();
             }
         }
-
-        public void ResetIngredientQuantities()
+        public override string ToString()
         {
-            foreach (Ingredients ingredient in IngredientList)
+            string recipeString = "Name: " + name + "\n";
+            recipeString += "Ingredients:\n";
+
+            foreach (Ingredients ingredient in ingredients)
             {
-                ingredient.Quantity = 0;
+                recipeString += "- " + ingredient.ToString() + "\n";
             }
+
+            recipeString += "Steps:\n";
+
+            for (int i = 0; i < steps.Count; i++)
+            {
+                recipeString += (i + 1) + ". " + steps[i] + "\n";
+            }
+
+            return recipeString;
         }
     }
 }
