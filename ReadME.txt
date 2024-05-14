@@ -26,3 +26,14 @@ Resetting recipe Quantities will return any adjusted amounts back to their origi
 Removing all saved recipes will remove all previously saved recipe data from the database.
 
 The main menu will then re-display for the user to select another option or quit the application. 
+for PART 2
+
+The code is able to input the calories into a calculator that will add them all together.
+
+The calculator will tell you if your calorie combination between ingredients goes over 300.
+
+the user will be able to input te food groups that each ingredient falls under.
+
+arrays have been removed and changed into lists.
+
+
