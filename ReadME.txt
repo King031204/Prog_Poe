@@ -37,3 +37,10 @@ the user will be able to input te food groups that each ingredient falls under.
 
 arrays have been removed and changed into lists.
 
+Part 3
+
+for this part we officially Create the App via WPF
+
+the windows are the screens you would see should you be using the app
+
+the code is added to the backend of it and it works seemlessly
