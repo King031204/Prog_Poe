@@ -1,54 +1,90 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace Prog_Poe
+namespace RecipeApp
 {
-    class Recipe
+    public class Recipe
     {
-        public string name;
-        public List<Ingredients> ingredients;
-        public List<string> steps;
+        public string Name { get; set; }
+        private List<Ingredient> ingredients = new List<Ingredient>();
 
-        public Recipe(string name, List<Ingredients> ingredients, List<string> steps)
+        public void AddIngredient(string name, double quantity, string unit, double calories, string foodGroup)
         {
-            this.name = name;
-            this.ingredients = ingredients;
-            this.steps = steps;
-
+            ingredients.Add(new Ingredient(name, quantity, unit, calories, foodGroup));
         }
 
-        public void ScaleQuantities(double scaleFactor)
+        public void DisplayRecipe()
         {
-            foreach (Ingredients ingredient in ingredients)
+            Console.WriteLine($"Recipe: {Name}");
+            foreach (var ingredient in ingredients)
             {
-                ingredient.ScaleQuantity(scaleFactor);
+                Console.WriteLine(ingredient);
+            }
+        }
+
+        public void Scale(double factor)
+        {
+            foreach (var ingredient in ingredients)
+            {
+                ingredient.Quantity *= factor;
             }
         }
 
         public void ResetQuantities()
         {
-            foreach (Ingredients ingredient in ingredients)
+            foreach (var ingredient in ingredients)
             {
                 ingredient.ResetQuantity();
             }
         }
+
         public override string ToString()
         {
-            string recipeString = "Name: " + name + "\n";
-            recipeString += "Ingredients:\n";
-
-            foreach (Ingredients ingredient in ingredients)
-            {
-                recipeString += "- " + ingredient.ToString() + "\n";
-            }
-
-            recipeString += "Steps:\n";
-
-            for (int i = 0; i < steps.Count; i++)
-            {
-                recipeString += (i + 1) + ". " + steps[i] + "\n";
-            }
-
-            return recipeString;
+            return Name;
         }
+
+        public List<string> GetIngredients()
+        {
+            List<string> ingredientDetails = new List<string>();
+            foreach (var ingredient in ingredients)
+            {
+                ingredientDetails.Add(ingredient.ToString());
+            }
+            return ingredientDetails;
+        }
+    }
+
+
+
+    public class Ingredient
+    {
+        public string Name { get; set; }
+        public double Quantity { get; set; }
+        public string Unit { get; set; }
+        public double Calories { get; set; }
+        public string FoodGroup { get; set; }
+        private double originalQuantity;
+
+        public Ingredient(string name, double quantity, string unit, double calories, string foodGroup)
+        {
+            Name = name;
+            Quantity = quantity;
+            Unit = unit;
+            Calories = calories;
+            FoodGroup = foodGroup;
+            originalQuantity = quantity;
+        }
+
+        public void ResetQuantity()
+        {
+            Quantity = originalQuantity;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}: {Quantity} {Unit}, {Calories} calories, {FoodGroup}";
+        }
+
+
     }
 }

@@ -1,0 +1,17 @@
+﻿<Window x:Class="RecipeApp.EnterRecipeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Enter Recipe Details" Height="300" Width="400">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Brown_Board.jpg"/>
+        </Grid.Background>
+        <StackPanel Margin="10">
+            <Label Content="Recipe Name:" FontWeight="Bold" Foreground="White"/>
+            <TextBox Name="RecipeNameTextBox" Margin="5"/>
+            <Label Content="Number of Ingredients:" FontWeight="Bold" Foreground="White"/>
+            <TextBox Name="NumIngredientsTextBox" Margin="5"/>
+            <Button Name="AddIngredientsButton" Content="Add Ingredients" Click="AddIngredientsButton_Click" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

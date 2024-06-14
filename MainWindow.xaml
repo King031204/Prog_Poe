@@ -1,0 +1,21 @@
+﻿<Window x:Class="RecipeApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="RecipeApp" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/Recipe_Background.jpg"/>
+            </StackPanel.Background>
+            <Button Name="EnterRecipeDetailsButton" Content="Enter Recipe Details" Click="EnterRecipeDetailsButton_Click" Margin="10" FontWeight="Bold" FontFamily="Gabriola" Foreground="White" BorderBrush="{x:Null}" Background="{x:Null}"/>
+            <Button Name="ViewRecipesButton" Content="View Recipes" Click="ViewRecipesButton_Click" Margin="10" FontWeight="Bold" FontFamily="Gabriola" Foreground="White" BorderBrush="{x:Null}" Background="{x:Null}"/>
+            <Button Name="ChooseRecipeButton" Content="Choose Recipe" Click="ChooseRecipeButton_Click" Margin="10" Foreground="White" FontFamily="Gabriola" FontWeight="Bold" BorderBrush="{x:Null}" Background="{x:Null}"/>
+            <Button Name="ScaleRecipeButton" Content="Scale Recipe" Click="ScaleRecipeButton_Click" Margin="10" Foreground="#FFFBFAFA" FontFamily="Gabriola" FontWeight="Bold" BorderBrush="{x:Null}" Background="{x:Null}"/>
+            <Button Name="ResetQuantitiesButton" Content="Reset Quantities" Click="ResetQuantitiesButton_Click" Margin="10" FontFamily="Gabriola" FontWeight="Bold" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            <Button Name="ClearAllDataButton" Content="Clear All Data" Click="ClearAllDataButton_Click" Margin="10" FontFamily="Gabriola" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Window>
